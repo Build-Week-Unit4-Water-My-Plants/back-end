@@ -4,18 +4,19 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "migrate:dev": "knex migrate:latest",
-    "rollback:dev": "knex migrate:rollback",
-    "seed:dev": "knex seed:run",
-    "migrate:prod": "heroku run knex migrate:latest -a YOUR_HEROKU_APP_NAME",
-    "rollback:prod": "heroku run knex migrate:rollback -a YOUR_HEROKU_APP_NAME",
-    "database:prod": "heroku pg:psql -a YOUR_HEROKU_APP_NAME",
-    "seed:prod": "heroku run knex seed:run -a YOUR_HEROKU_APP_NAME",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "migrateh": "heroku run knex migrate:latest -a build-week-unit4-water-plants",
+    "rollbackh": "heroku run knex migrate:rollback -a build-week-unit4-water-plants",
+    "databaseh": "heroku pg:psql -a build-week-unit4-water-plants",
+    "seedh": "heroku run knex seed:run -a build-week-unit4-water-plants",
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand",
     "deploy": "git push heroku main"
   },
   "engines": {
-    "node": "16.13.2"
+    "node": "16.13.2",
+    "npm": "6.14.11"
   },
   "license": "ISC",
   "dependencies": {

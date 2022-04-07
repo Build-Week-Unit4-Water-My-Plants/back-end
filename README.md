@@ -1,3 +1,5 @@
+### Heroku Deployed Link: https://build-week-unit4-water-plants.herokuapp.com/
+
 # Build Week Scaffolding
 
 First READ these instructions to get an overview of what's involved in scaffolding an Express + PostgreSQL app that deploys to Heroku.

@@ -1,4 +1,5 @@
 ### Heroku Deployed Link: https://build-week-unit4-water-plants.herokuapp.com/
+### Vercel Deployed Link: https://back-end-theta-self.vercel.app/
 
 # Build Week Scaffolding
 

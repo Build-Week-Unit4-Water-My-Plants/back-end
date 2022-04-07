@@ -1,7 +1,7 @@
 // Imports
 const { BCRYPT_ROUNDS } = require('./secret')
 const router = require('express').Router()
-const User = require('../users/user-model')
+const User = require('../users/users-model')
 const { validateUniqueUsername, validateInfo, validateChangePhone, validatePhone, validateChangePassword } = require('./auth-middleware')
 
 // Import bcrypts for hashing
@@ -40,7 +40,7 @@ router.post('/login', validateInfo, async (req, res, next) => {
     }
   });
 
-// user can update phone number and password, need to add restricted access, and middlesware to make sure phone number is unique 
+// user can update phone number and password, need to add restricted access, and middleware to make sure phone number is unique 
 router.put('/update', validateChangePhone, validateChangePassword, async (req, res, next) => {
     const user = req.body
     const { user_id, password } = user

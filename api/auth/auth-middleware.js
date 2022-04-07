@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs')
-const Users = require('../users/user-model')
+const Users = require('../users/users-model')
 
 const validateUniqueUsername = async (req, res, next) => {
     try {

@@ -3,7 +3,7 @@ const helmet = require('helmet')
 const cors = require('cors')
 const authRouter = require('./auth/auth-router')
 const plantRouter = require('./plants/plants-router')
-const userRouter = require('./users/user-router')
+const userRouter = require('./users/users-router')
 
 const server = express()
 server.use(express.json())

@@ -8,9 +8,9 @@ exports.up = async (knex) => {
     })
     .createTable('plants', (plants) => {
       plants.increments('plant_id')
-      plants.string('nickname', 256).notNullable()
-      plants.string('species', 256)
-      plants.integer('h2oFrequency', 256).notNullable()
+      plants.string('nickname', 200).notNullable()
+      plants.string('species', 200)
+      plants.integer('h2oFrequency', 200).notNullable()
       plants.string('image', 300)
       plants.integer('user_id')
         .unsigned()

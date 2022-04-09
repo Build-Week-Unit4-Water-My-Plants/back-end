@@ -22,11 +22,11 @@ const validatePhone = async (req, res, next) => {
         const user = await Users.get()        
         user.map(each => {
                 if ( each.phoneNumber === phoneNumber ) {
-                    next({ status: 400, message: "That phone number is being used by another user" })
+                    next({ status: 400, message: "that phone number is being used by another user" })
                 }
             })
         if (isNaN(phoneNumber) || phoneNumber.length !== 10){
-            next({ status: 400, message: "Please insert a valid 10 digit phone number"})
+            next({ status: 400, message: "please insert a valid 10 digit phone number"})
         }
         next()
     } catch (err) {
@@ -40,12 +40,12 @@ const validateChangePhone = async (req, res, next) => {
         const exactUser = await Users.getById(user_id)
         const user = await Users.get()       
         if (isNaN(phoneNumber) || phoneNumber.length !== 10){
-            next({ status: 400, message: "Please insert a valid 10 digit phone number"})
+            next({ status: 400, message: "please insert a valid 10 digit phone number"})
         }
         user.map(each => {
             const number = each.phoneNumber
                 if ( number === phoneNumber && number !== exactUser[0].phoneNumber) {
-                    next({ status: 400, message: "That phone number is being used by another user" })
+                    next({ status: 400, message: "that phone number is being used by another user" })
                 }
             })
         next()
@@ -58,7 +58,7 @@ const validateInfo = async (req, res, next) => {
     try {
         const { username, password } = req.body
         if (!username || !password) {
-            next({ status: 400, message: "Username and Password are required" })
+            next({ status: 400, message: "username and password are required" })
         }
         next()
     } catch (err) {
@@ -74,7 +74,7 @@ const validateChangePassword = async (req, res, next) => {
     } else if (user && bcrypt.compareSync(oldPassword, user.password)){
       next()
     } else {
-      next({ status: 401, message: 'Old password incorrect' })
+      next({ status: 401, message: 'old password incorrect' })
     }  
 }
 

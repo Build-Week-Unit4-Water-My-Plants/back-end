@@ -1,7 +1,5 @@
-// Imports 
 const router = require('express').Router()
 const Plants = require('./plants-model')
-// Routes
 
 router.get('/', async (req, res, next) => {
     try {

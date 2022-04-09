@@ -15,7 +15,7 @@ server.use('/api/plants', plantRouter)
 server.use('/api/users', userRouter)
 
 server.use('*', (req, res) => {
-  res.status(404).json({ message: `${req.baseUrl} is not a valid address`})
+  res.status(404).json({ message: `${req.method} ${req.baseUrl} is not a valid address`})
 })
 
 server.use((err, req, res, next) => { 
